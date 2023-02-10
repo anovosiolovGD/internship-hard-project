@@ -7,7 +7,6 @@ import java.security.NoSuchAlgorithmException;
 public class StringUtils {
     private StringUtils() {}
 
-    /* Applies Sha256 to a string and returns a hash. */
     public static String applySha256(String input){
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

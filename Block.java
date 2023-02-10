@@ -49,16 +49,17 @@ public class Block implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Block: \n" +
-                        "Created by miner # %s \n" +
-                        "Id: %d \n" +
-                        "Timestamp: %d \n" +
-                        "Magic number: %d \n" +
-                        "Hash of the previous block: \n" +
-                        "%s \n" +
-                        "Hash of the block: \n" +
-                        "%s \n" +
-                        "Block was generating for %d seconds",
+        return String.format("""
+                        Block:\s
+                        Created by miner # %s\s
+                        Id: %d\s
+                        Timestamp: %d\s
+                        Magic number: %d\s
+                        Hash of the previous block:\s
+                        %s\s
+                        Hash of the block:\s
+                        %s\s
+                        Block was generating for %d seconds""",
                 minerId,
                 id,
                 timestamp,
