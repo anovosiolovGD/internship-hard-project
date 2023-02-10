@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: 30/12/2020 reimplement serialization features
 public class Blockchain implements Serializable {
+
+    // -------- Serialization ------
     //    private static final transient String FILE_PATH = "./Database.txt";
     private static final long serialVersionUID = 1L;
     private final List<Block> blocks;
@@ -20,6 +21,8 @@ public class Blockchain implements Serializable {
         final var zeroesList = new ArrayList<Integer>();
         zeroesList.add(0);
         return new Blockchain(zeroesList);
+
+        // -------- Serialization ------
 //        try {
 //            final var blockchain = (Blockchain) deserialize(FILE_PATH);
 //            return blockchain.isValid() ? blockchain : new Blockchain(zeroes);
@@ -78,6 +81,8 @@ public class Blockchain implements Serializable {
             updateRules();
             printUpdates();
             System.out.println();
+
+            // -------- Serialization ------
 //            try {
 //                serialize(this, FILE_PATH);
 //            } catch (IOException e) {
@@ -97,10 +102,6 @@ public class Blockchain implements Serializable {
             zeroesList.add(getNextZeroes());
         }
     }
-
-//    private boolean isValid() {
-//        return blocks.stream().allMatch(this::isValid);
-//    }
 
     private boolean isValid(Block block) {
         return getNextBlockId() == block.getId() &&
